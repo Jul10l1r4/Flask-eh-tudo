@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Olá {{ nome }}</title>
+		<meta charset="utf-8"/>
+		{% assets filters="cssmin", output="gen/packed.css",
+          "css/form.css", "css/text.css" %}
+			<link rel="stylesheet" href="{{ ASSET_URL }}"/>
+		{% endassets %}
+	
+		{% assets filters="jsmin", output="gen/packed.js",
+          "JS/console-returns.js", "JS/make.js" %}
+			<script async src="{{ ASSET_URL }}"></script>
+		{% endassets %}
+	</head>
+  <body>
+    <div id="blocao">
+			<h1 onclick="ola()" style="cursor:pointer" title="click-me">Taca-lhe pau {{nome}}</h1>
+			<iframe class="inframe" height="315" width="100%" src="https://www.youtube.com/embed/suxbhKJspLI" 
+			frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+		</iframe>
+    </div>
+  </body>
+</html>
